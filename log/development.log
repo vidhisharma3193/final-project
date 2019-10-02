@@ -1,0 +1,54 @@
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170619203656)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170619203656"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateNotes (20170619203722)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "body" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170619203722"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-02 17:28:58.318098"], ["updated_at", "2019-07-02 17:28:58.318098"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "vidhi.sharma"], ["created_at", "2019-07-02 17:29:33.040447"], ["updated_at", "2019-07-02 17:29:33.040447"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Suffoco."], ["body", "Viduo vito articulus. Ut baiulus cimentarius. Amor surculus concido.\\nDedecor conservo uterque. Tamquam non virga. Administratio est vergo.\\nStudio annus vere. Socius accusamus cernuus. Dolor adfectus annus."], ["created_at", "2019-07-02 17:29:33.827301"], ["updated_at", "2019-07-02 17:29:33.827301"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Asporto vado tener."], ["body", "Addo accendo vomer. Umquam curriculum eaque. Depono vito vitiosus.\\nArmo vivo pecco. Volo curiositas verto. Toties iure accusator.\\nAdipiscor assentator denego. Ultio curtus contigo. Accendo vultuosus artificiose."], ["created_at", "2019-07-02 17:29:33.831513"], ["updated_at", "2019-07-02 17:29:33.831513"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Suppono caelum thymbra acer."], ["body", "Tamisium laboriosam curso. Denuo capto condico. Vetus pecto concedo.\\nVolutabrum sol asperiores. Viscus tui numquam. Cunabula mollitia depraedor.\\nVulnus contra sunt. Totidem ocer appono. Debitis autem est."], ["created_at", "2019-07-02 17:29:33.834815"], ["updated_at", "2019-07-02 17:29:33.834815"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Delinquo."], ["body", "Suscipit ut coruscus. Solus tantillus adopto. Arma supellex decretum.\\nRepellat caute aut. Decretum causa allatus. Architecto apto vestigium.\\nArmarium utrum culpo. Circumvenio angelus laboriosam. Consectetur virgo cetera."], ["created_at", "2019-07-02 17:29:33.837612"], ["updated_at", "2019-07-02 17:29:33.837612"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Confugo viscus."], ["body", "Versus comis impedit. Audio abduco volaticus. Ea tandem ut.\\nCaute timor adultus. Tutamen in adversus. Sordeo calculus ipsum.\\nSub cervus colo. Cohors sed bene. Ustilo volaticus deputo."], ["created_at", "2019-07-02 17:29:33.840336"], ["updated_at", "2019-07-02 17:29:33.840336"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Cresco socius teneo."], ["body", "Unde volaticus facere. Bonus condico sublime. Ratione tepidus depromo.\\nMolestias voluntarius considero. Deduco allatus itaque. Tego et qui.\\nAdipisci ventito vulnus. Quae amo deripio. Sordeo despirmatio urbanus."], ["created_at", "2019-07-02 17:29:33.843254"], ["updated_at", "2019-07-02 17:29:33.843254"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Causa thymbra coma truculenter."], ["body", "Compono trepide deinde. Esse voluptas despirmatio. Consequuntur sordeo et.\\nVinitor aeger commodo. Hic deporto fuga. Velit adiuvo provident.\\nConsequatur sopor auxilium. Truculenter ad aeger. Pecunia sordeo perspiciatis."], ["created_at", "2019-07-02 17:29:33.847730"], ["updated_at", "2019-07-02 17:29:33.847730"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Sumptus auditor vere."], ["body", "Optio tribuo crudelis. Taceo talio cur. Convoco rem thesis.\\nEt decerno defigo. Templum atque ex. Solus eos vestigium.\\nInfit nam armo. Degusto strues voluptatem. Arbor amplitudo alter."], ["created_at", "2019-07-02 17:29:33.852968"], ["updated_at", "2019-07-02 17:29:33.852968"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Caecus caute defero."], ["body", "Libero damnatio animadverto. Angustus tyrannus asporto. Dignissimos subito torrens.\\nToties uredo triduana. Ipsam theca et. Avaritia sit terreo.\\nVigor suffoco clarus. Currus tenetur ut. Crebro altus autem."], ["created_at", "2019-07-02 17:29:33.857027"], ["updated_at", "2019-07-02 17:29:33.857027"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Defungo thesis."], ["body", "Ut adiuvo dolorem. Varietas creta voluptate. Eveniet adamo optio.\\nSufficio cum tres. Sed et clarus. Assentator ara tracto.\\nDegero depraedor cupio. Asperiores ambulo tametsi. Voluptas tot vis."], ["created_at", "2019-07-02 17:29:33.859635"], ["updated_at", "2019-07-02 17:29:33.859635"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
